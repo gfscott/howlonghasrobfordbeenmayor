@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>How Long Has Rob Ford Been Mayor: The API</title>
+	<style>
+		
+		* { box-sizing: border-box; }
+		
+		body {
+			background: #f2f2f2;
+			font-family: Georgia, "Times New Roman", sans-serif;
+			color: #444;
+			font-size: 1.2em;
+		}
+		
+		.container {
+			width: 90%;
+			max-width: 600px;
+			margin: 5em auto;
+		}
+		
+		h1, h2 {
+			font-size: 2em;
+			text-align: center;
+		}
+		
+		h1 {
+			font-weight: normal;
+			
+		}
+		
+		h2 {
+			font-family: monospace;
+			color: #55e;
+		}
+		
+		a {
+			color: #444;
+		}
+		
+		a:hover {
+			color: #55e;
+		}
+		
+		.example {
+			padding: 1em 1em 2em;
+			margin: 1em 0;
+			border-top: solid 1px #777;
+			border-bottom: solid 1px #777;
+		}
+		
+		code {
+			font-family: monospace;
+			display: block;
+			padding: 1em;
+			background: #fff;
+			border-radius: 0.3em;
+		}
+		
+		.twitter-follow-button {
+			display: block;
+			position: absolute;
+			top: 1em;
+			right: 1em;
+			margin: 0;
+			padding: 0;
+		}
+		
+	</style>
+	
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-542016-9']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+</head>
+<body>
+	
+	<div class="container">
+		<h1><a href="/" title="How long has Rob Ford been mayor?">How Long Has Rob Ford Been Mayor?</a></h1>
+		<h2>The API</h2>
+		<p>Does a single-serving site that does nothing but count the days of Rob Ford&rsquo;s mayoralty of Toronto really need a realtime open API?</p>
+		<p>Absolutely not. That's a ridiculous idea. But he&rsquo;s kind of a ridiculous mayor. So here we are.</p>
+		
+		<section class="example">
+		
+			<p>Call the API at this endpoint:</p>
+			<code class="call">
+				http://howlonghasrobfordbeenmayor.com/api/v1/
+			</code>
+			
+			<p>And it will respond with a JSON object containing two values:</p>
+			<code class="response"></code>
+			
+		</section>
+		
+		<p>(The response you see above is, in fact, a jQuery AJAX call. View source to see what it looks like.)</p>
+		<p>That&rsquo;s it. I have no idea why on earth you would want to do such a thing, but now you can. Go wild.</p>
+		
+	</div>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				var query = "http://howlonghasrobfordbeenmayor.com/api/v1/";
+				$.getJSON(query, function(data){
+					var output = JSON.stringify(data);
+					$('.response').append(output);
+				});
+			});			
+		</script>
+		
+		<a href="https://twitter.com/gfscott" class="twitter-follow-button" data-show-count="true" data-dnt="true">Follow @gfscott</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		
+</body>
+</html>
